@@ -1,42 +1,33 @@
 # HTML
-
 HTML 로 표현할 수 있는 것
-
-- Contents
-  - Text
-  - Media
-    - Image, Video, Audio
-- Structure
+  - Contents
+    - Text
+    - Media
+      - Image, Video, Audio (오디오스트리밍 컨텐츠를 제외하면 잘 안씀.)
+  - Structure
   - Semantic (의미있는 구조)
   - Layout
-
 # HTML Basic
-
 표시 언어. 기능 동작과는 상관이 없어서 프로그래밍 언어와는 다르다.
-
-- HTML: Hyper Text Markup Language
-
-  - Hyper Text: Hyper Link 로 연결된 문서. 웹페이지 (콘텐츠, 구조)
-  - Markup: 표시
-  - Language: 언어
-
-- HTML 문법
-  - 명칭: Tag, Element
-  - 구성: 시작태그, 종료태그
-  - 종료태그가 없는 태그도 있음: 빈 태그 (Empty element)
-
-```
-<tag> contents </tag> : Element
-<tag ...>: Empty element
-```
-
-- HTML 속성 (Attribute)
-  - HTML Eliment 를 표시할 떄 필요한 추가정보를 입력
-  - name="value"
-    '''
-    <a href="https://www.naver.com">네이버</a>
-    <img src="photo.jpg">
-    '''
+  - HTML: Hyper Text Markup Language
+    - Hyper Text: Hyper Link 로 연결된 문서. 웹페이지 (콘텐츠, 구조)
+    - Markup: 표시
+    - Language: 언어
+  - HTML 문법
+    - 명칭: Tag, Element
+    - 구성: 시작태그, 종료태그
+    - 종료태그가 없는 태그도 있음: 빈 태그 (Empty element)
+      ```
+      <tag> contents </tag> : Element
+      <tag ...>: Empty element
+      ```
+  - HTML 속성 (Attribute)
+    - HTML Eliment 를 표시할 떄 필요한 추가정보를 입력
+    - name="value"
+      '''
+      <a href="https://www.naver.com">네이버</a>
+      <img src="photo.jpg">
+      '''
 
 ## HTML Basic Structure
 
@@ -64,7 +55,6 @@ HTML 로 표현할 수 있는 것
 
 - 웹사이트에 contents, structure 등을 표시하는 모든 태그는 body 에 들어간다.
 - head 에 들어가는 부분을 제외한 다른 모든 태그가 들어간다.
-
 ## HTML Contents
 
 ### Text
@@ -73,7 +63,6 @@ HTML 로 표현할 수 있는 것
 
 - h(heading): 제목
 - 1 to 6 단계로 표시됨
-
 #### Paragraph (단락)
 
 - p(paragraph): 단락
@@ -82,14 +71,15 @@ HTML 로 표현할 수 있는 것
     - line break: br (강제 줄바꿈 태그) 사용
     - space: &nbsp; (강제 공백 엔터티 (entity), 태그가 아님.) 사용.
 - hr(horizontal rule): 수평선 긋기. 단락을 수평선 형태로 구분하며 단락의 개념을 포함한다.
-
 #### List (목록)
+
 - 순서 유무에 따라 다른 태그를 쓴다.
 - ul (unordered list): 순서가 없는 목록
 - ol (ordered list): 순서가 있는 목록
 - li (list item): 목록 항목
 
-** 포함관계 (Nested structure)
+\*\* 포함관계 (Nested structure)
+
 - 태그 안에 다른 태그들이 포함되는 것을 의미한다.
 - 포함하는 요소
   - 조상 요소 (Ancestor)
@@ -97,18 +87,19 @@ HTML 로 표현할 수 있는 것
 - 포함되는 요소
   - 자식 요소 (Child)
   - 자손 요소 (Descendent)
-- 옆에 나란히 있는 요소 
+- 옆에 나란히 있는 요소
   - 형제 요소 (Sibling)
 
 '''
 (1) <html>
-(2)   <body>
-(3)     <h1>내용 제목</h1>
-(4)     <p>
-(5)       단락내용<br>
-        </P>
-      </body>
-    </html>
+(2) <body>
+(3) <h1>내용 제목</h1>
+(4) <p>
+(5) 단락내용<br>
+
+</P>
+</body>
+</html>
 '''
 (1) 조상 요소 | 기준 요소 | 조상 요소
 (2) 조상 요소 | 자식 요소 | 부모 요소
@@ -116,13 +107,37 @@ HTML 로 표현할 수 있는 것
 (4) 부모 요소 | 자손 요소 | 기준 요소
 (5) 기준 요소 | 자손 요소 | 자식 요소
 
+- Description list (설명 목록)
+  - dl (Description list)
+  - dt (Description title): 항목
+  - dd (Description data): 항목에 대한 부연 설명
 #### Table (표)
 
+- table
+- thead (table head): 그룹핑을 위한 태그, 표 상단, 제목,
+- tbody (table body): 그룹핑을 위한 태그, 컨텐츠, 데이터
+- tr (table row): 줄, 행
+- th (table header): 제목
+- td (table data): 칸, 열
 #### Hyper Link (하이퍼링크)
+- a (anchor)
+- 기본 속성: href (hypertext reference), 연결할 웹페이지의 위치를 표시해줌.
+- 링크의 이동위치에 따라서 외부링크와 내부링크로 나뉜다. 
+  - 외부링크:
+  - 내부링크: 북마크 기능 (bookmark)
+
 
 ### Media
 
 #### Image (이미지)
+- img (image)
+- 기본속성
+  - src (source): 이미지 파일의 이름과 위치를 표현
+  - alt (alternate text): 대체 텍스트, 이미지가 화면에 표시되지 않을 때 이 텍스트를 표시함. screen reader 도 이미지를 대신해서 이 대체 텍스트를 읽는다.
+  '''
+  <img src="photo.png" alt="제주도 서귀포 바닷가 배경 사진">
+  '''
+  - 시작태그만 있는 빈 태그
 
 #### Video (영상)
 
