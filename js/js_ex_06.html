@@ -12,13 +12,15 @@
       const array = [1, 2, 3];
       // 인덱스 번호는 0부터 시작함
       console.log(array[0]);
-      cnosole.log(array);
+      console.log(array);
 
       array[0] = 5;
-
       console.log(array);
       // 배열 데이터에서 const 를 이용해서 선언하는 경우
       // 원소를 바꾸는 것은 가능하지만 배열의 종류 전체를 바꾸는 것은 불가능함
+
+      array.push(30);
+      console.log(array);
 
       // array = ["a", "b", "c"];
 
@@ -29,6 +31,9 @@
       }
       console.log(price);
       console.log(sale);
+
+      price.pop();
+      console.log(price);
 
       // 객체 데이터 선언
       const obj = {
@@ -41,14 +46,41 @@
       // 객체 데이터 표현 방법: 객체이름.property 또는 method
 
       console.log(obj);
-      console.log(boj.type);
+      console.log(obj.type);
       obj.type = "BMW";
       console.log(obj);
 
       // obj = {
       //   weight:850;
-
       // }
+
+      console.log(obj["type"]);
+      /*
+        숫자 앞에 .을 붙일 수가 없는 경우에는 []로 쓴다.
+        0:'type'
+        obj.o 을 쓸 수 없기 때문에 obj[0] 으로 쓴다.
+      */
+
+      // class 선언
+      // property 를 만드는 방법
+      class myClass {
+        constructor(type, model, color) {
+          this.type = type;
+          this.model = model;
+          this.color = color;
+        }
+
+        print() {
+          console.log(this.type, this.model, this.color);
+        }
+      }
+
+      // 객체 데이터 생성
+
+      let carObj = new myClass("Benz", "E-class", "red");
+      console.log(carObj);
+
+      carObj.print();
     </script>
   </body>
 </html>
