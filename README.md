@@ -38,7 +38,7 @@ codesandbox 원본 주소: https://codesandbox.io/s/edu-ministori/git06
 
 ## Naming 표기법
 
-- Namimg 하는 경우
+- Naming 하는 경우
   - Naming 만 보고서도 HTML, CSS, Javascript 요소를 구분할 수 있음
   - HTML, CSS: id, class
   - JS: 변수, 함수의 이름을 정의할 경우
