@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DOM 접근 API</title>
+  </head>
+  <body>
+    <h1>DOM 접근 API</h1>
+    <div>content1</div>
+    <div class="content">content2</div>
+    <div id="content">content3</div>
+
+    <p class="newcontent"></p>
+
+    <script>
+      // HTML4 방식
+      // script 태그를 HTML 보다 아래에 위치시키도록 주의한다.
+      let getTagName = document.getElementsByTagName("div");
+      console.log(getTagName);
+      console.log(getTagName.length);
+      console.log(getTagName[0]);
+      // 숫자를 바로 쓸수 없는 경우 [ ]로 묶어준다.
+
+      let getClassName = document.getElementsByClassName("content");
+      console.log(getClassName);
+      // 뭔가 문제가 있는듯? 왜 출력이 안되지?
+
+      let getId = document.getElementById("content");
+      console.log(getId);
+
+      // HTML5 방식
+      let queryTag = document.querySelectorAll("div");
+      console.log(queryTag);
+
+      let queryClass = document.querySelector(".content");
+      console.log(queryClass);
+
+      let queryId = document.querySelector("#content");
+      console.log(queryId);
+
+      console.log("innerHTML :" + queryClass.innerHTML);
+
+      let newContent = document.querySelector("newcontent");
+      newContent.innerHTML = queryClass.innerHTML;
+    </script>
+  </body>
+</html>

@@ -300,9 +300,41 @@ if (condition) {
 
 ## Js 활용
 
+- 데이터 입출력
+- UI 효과
+
 ### HTML DOM (Document object model)
 
 - HTML Element 들을 객체화시킨 모델
 - HTML DOM 을 사용하여 HTML Element 를 제어.
 
 -
+
+### DOM 접근 API
+
+- DOM API: DOM 객체 메소드 형태로 제공
+
+'''
+HTML4 에서의 DOM 접근
+document.getElementById('id') : id 로 DOM 에 접근
+document.getElementsByClassName('class') : class 로 DOM 에 접근
+document.getElementsByTagName('tag이름') " tag 로 DOM 에 접근
+API 이름이 너무 길어짐
+
+jQuery
+$('#id')
+$('.class')
+\$('tag')
+CSS 와 통일된 방법
+
+HTML5 에서의 DOM 접근
+document.querySelector('#id')
+document.querySelector('.class')
+document.querySelector('tag')
+-> class 와 tag 는 여러개가 존재할 수 있지만 이 경우 첫번째 class 만 적용됨
+
+document.querySelectorAll('.class')
+document.querySelectorAll('tag')
+-> 여러개의 class 와 tag 에 모두 적용하려면 document.querySelectorAll 로 쓴다.
+
+'''
