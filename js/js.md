@@ -1,6 +1,7 @@
 # Javascript
 
 - 문법
+
   - Javascript 언어 문법
   - 문법적 내용
     - 데이터/변수/연산자
@@ -8,9 +9,10 @@
     - 함수
     - 배열/객체/Class
     - 추가 문법
+
 - 활용
-  - HTML/CSS/Javascript
   - HTML dom
+  - HTML/CSS/Javascript
   - Open API - 객체
 
 ## Js basic
@@ -259,4 +261,48 @@ let arr = [1,2,3,4,a] 배열이 성립되지 않음
 
 ### 추가 문법 (변수에 대한 내용)
 
+#### 변수 scope
+
+- scope
+  - global scope
+    - 변수는 모든 범위에서 접근 가능함
+  - function scope
+    - 해당 함수 번위에서만 접근이 가능함
+  - block scope
+    - 해당 block 범위에서만 접근이 가능함
+
+'''
+
+<script>
+//global scope
+let a = 1;
+var _a = 1;
+function myFunction () {
+  //function scope
+  let b = 2;
+  var _b = 2;
+  for (statement) {
+    //block scope1
+    let c = 3;
+    var _c = 3;
+  }
+}
+if (condition) {
+  //block scope2
+  let d = 4;
+  var _d = 4;
+}
+</script>
+
+'''
+
+'''
+
 ## Js 활용
+
+### HTML DOM (Document object model)
+
+- HTML Element 들을 객체화시킨 모델
+- HTML DOM 을 사용하여 HTML Element 를 제어.
+
+-

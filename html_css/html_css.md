@@ -254,3 +254,118 @@ HTML 로 표현할 수 있는 것
   - b (bold): 굵은 글씨
 
 # CSS
+
+- content styling
+  - text styling
+  - media styling
+- layout (structure styling)
+
+  - 일반적인 layout 배치는 세로로 이루어지므로 가로배치를 어떻게 구현할지 중요함
+  - 가로배치에는 다양한 방법이 있지만 flexbox 방식을 주로 사용
+
+  ## CSS Basic
+
+  - CSS: Cascading style sheet
+
+'''
+
+방법1: 가독성이 떨어지지만 브라우저가 렌더링하는데에는 효율적
+h1 {color: blue; font-size: 14pt; align: center;}
+
+방법2: 가독성이 좋지만 브라우저가 렌더링하는데에는 비효율적
+h1 {
+color: blue;
+font-size: 20px;
+align: center;
+}
+'''
+
+일반적으로는 방법1로 작성한 후 방법2의 형태로 압축 가공하는데 이 과정을 minify, uglify 라고 한다.
+이런 과정을 수행하는 자동화툴을 build tool 이라고함.
+
+## Selector (선택자)
+
+- 선택자로 HTML 요소를 선택하는 방법
+  - Simple selector (단순선택자)
+    - Tag/Element의 이름을 사용
+    - Class 이름을 사용
+    - Id 이름을 사용
+
+'''
+
+/_
+a 태그 모두의 color 가 red 로 적용됨
+_/
+
+<a href = "http://www.naver.com">네이버</a>
+<a href = "http://www.daum.net">다음</a>
+
+a {
+color:red;
+}
+
+/_
+같은 a 태그 각각에 다른 속성을 적용하고 싶을 때에는 class 와 id 를 사용한다. 이때 class 앞에는 .을, id 앞에는 #을 써서 일반 태그와 구분해준다.
+_/
+
+<a href = "http://www.naver.com" class = "naver">네이버</a>
+<a href = "http://www.daum.net" id = "daum">다음</a>
+
+.naver {
+color:green;
+}
+
+#daum {
+color: blue;
+}
+
+'''
+
+### id와 class 의 차이점
+
+- id
+  - 같은 HTML 페이지 내에서 고요/유일해야 한다.
+  - 한 개의 HTML 요소에 여러 개의 id 이름을 사용하는 것은 불가능하다.
+    - 중복사용할 경우 프론트엔드 상에서는 작동하지만 백엔드 상에서 오류가 발생할 수 있다.
+- class
+  - 같은 HTML 페이지 내에서 여러번 사용 가능하다.
+  - 한 개의 HTML 요소에 여러 개의 class 이름을 사용할 수 있다.
+  - 효율성 측면에서 프론트엔드 쪽에서는 class 만 사용해서 스타일링을 하고 id 는 백엔드 개발자가 쓰도록 남겨두는 경우가 많다.
+  - 실제로 프론트엔드 개발에서는 반드시 id 를 사용하지 않아도 된다.
+  - 프론트엔드 개발에서는 태그의 독립성을 위해서 일반적으로 모든 태그에 class 이름을 붙이는 경우가 많다.
+  - class 의 일므을 붙이는 방법에 대해서는 다양한 방법론이 있다. OOCSS, BEM, ...
+
+'''
+
+<p class = "paragraph"> 단락내용 1</p>
+<p class = "paragraph"> 단락내용 2</p>
+
+<p id = "content"> 단락내용 3</p>
+<p id = "content"> 단락내용 4</p> -> 사용불가. 단락내용 3에서 사용했으므로 동일한 id 를 중복해서 사용할 수 없다.
+
+<P class="gnb-list-item">회사소개</p>
+
+'''
+
+<!-- - 표기법의 의미
+  - 2 개 단어 이상으로 조합하여 단어와 단어 사이를 구별해서 사용
+  - 예시: queryselector 보다 querySelector 가 단어와 단어 사이를 구분하기 쉬움
+- 표기법의 종류 (정해진 규칙은 아니지만 build tool 이나 백엔드와의 협업을 고려할 때 권장되는 방법임.)
+  - section_contents: Snake case - 파일이나 폴더의 이름을 만들 때
+  - section-contents: Kebab case - HTML 에서의 id 와 class 만들 때
+  - sectionContents: Camel case - Javascript
+  - SectionContents: Pascal case - Javascript 의 Class 를 만들 때 -->
+
+### CSS 선택자의 우선순위
+
+- cascading 규칙
+
+  - 동일한 대상에 여러 스타일이 적용될 때 제일 마지막에 적용된 스타일이 반영된다.
+
+- 선택자 우선순위
+  - 선택자의 종류에 따라 CSS 의 적용 우선순위가 다르게 정의
+  - cascading 규칙에 따르지 않고 CSS 를 적용할 때 이 선택자 우선순위대로 스타일이 적용된다.
+  - inline 작성방식: 1000
+  - id: 100
+  - class: 10
+  - tag: 1
