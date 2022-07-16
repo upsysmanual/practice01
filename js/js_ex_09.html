@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DOM 제어 API</title>
+    <style>
+      .font {
+        font-size: 30px;
+        font-weight: bold;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DOM 제어 API</h1>
+
+    <p class="paragraph">
+      예문: HTML5는 HTML 4.01, XHTML 1.0, DOM 레벨 2 HTML에 대한 차기 표준
+      제안이다. 비디오, 오디오 등 다양한 부가기능과 최신 멀티미디어 콘텐츠를
+      액티브X 없이 브라우저에서 쉽게 볼 수 있게 하는 것을 목적으로 한다.
+    </p>
+    <script>
+      // Javascript 로 CSS 를 inline 방식으로 제어해서 DOM 에 CSS 스타일링을 추가
+
+      let paragraph = document.querySelector(".paragraph");
+
+      paragraph.style.textAlign = "center";
+      paragraph.style.color = "orange";
+
+      // 위의 방법은 DOM 이 CSS 를 inline 방식으로 제어하기 때문에 CSS 적용 우선순위가 높다.
+      // DOM 에 class 이름을 추가 또는 삭제하는 방법으로 제어하면 이러한 문제점을 보완할 수 있다.
+
+      paragraph.classList.add("font");
+    </script>
+  </body>
+</html>

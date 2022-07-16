@@ -358,14 +358,139 @@ color: blue;
 
 ### CSS 선택자의 우선순위
 
-- cascading 규칙
+\*\* cascading 규칙
 
-  - 동일한 대상에 여러 스타일이 적용될 때 제일 마지막에 적용된 스타일이 반영된다.
+- 동일한 대상에 여러 스타일이 적용될 때 제일 마지막에 적용된 스타일이 반영된다.
 
 - 선택자 우선순위
+
   - 선택자의 종류에 따라 CSS 의 적용 우선순위가 다르게 정의
   - cascading 규칙에 따르지 않고 CSS 를 적용할 때 이 선택자 우선순위대로 스타일이 적용된다.
   - inline 작성방식: 1000
   - id: 100
   - class: 10
   - tag: 1
+
+  ### Text Styling
+
+  #### Color
+
+'''
+h1 {
+color: blue ;
+}
+'''
+
+####Text alignment
+
+'''
+p {
+text-aling: center ;
+}
+'''
+
+- 정렬값 : left, center, right, justfy (양쪽맞춤)
+- 단어 중간의 줄바꿈
+- word-break
+
+'''
+p {
+word-break: break-all ;
+}
+'''
+
+#### Text Decoration (밑줄)
+
+'''
+h1 {
+text-decoration:underline ;
+}
+
+h1 {
+text-decoration:line-through ;
+}
+
+h1 {
+text-decoration:overline ;
+}
+
+a {
+text-decoration:none ;
+}
+'''
+
+#### Text trasformation
+
+텍스트의 대소문자를 변환해줌.
+
+text-transform: uppercase;
+}
+
+p.lowercase {
+text-transform: lowercase;
+}
+
+p.capitalize {
+text-transform: capitalize;
+}
+
+#### Test spacing
+
+'''
+p {
+text-indent:15px;
+}
+
+h2 {
+letter-spacing:5px;
+}
+
+p {
+word-spacing:3px;
+}
+
+p{
+white-space:nowrap;
+}
+
+'''
+
+- line-heignt
+  - 텍스트 줄을 포함한 줄 높이
+  - 단위/값
+    - px
+    - 배수값: 포트의 크기를 기준으로 정수 또는 소수를 사용할 수 있다.
+
+\*\* 상속: 조상요소나 부모요소에 적용했을 때 자식요소나 자손요소들에도 적용되는 것
+
+- HTML Element 중에 상속되지 않는 태그가 있음: 표 (단 표에서 부모요소에 적용하면 표의 자식요소에서는 적용됨)
+- CSS 속성 둥에 상속되지 않는 속성이 있음: 색상
+
+#### Font family
+
+- CSS 파일이 브라우저에서 랜더링되기 때문에 폰트 파일을 클라이언트 PC 에서 찾음.
+  - Web safe: 클라이언트 PC 에서 CSS 를 랜더링할 때에 폰트가 원활하게 표시되도록 하기 위해서 다수의 클라이언트 PC 에 설치되어있을 만한 폰트를 선택해야한다.
+- Fallback: font-family 속성의 값으로 정해준 폰트 종류를 순서대로 찾는다.
+- Web font: 클라이언트마다 폰트를 표시하는 환경이 다르므로 서버에 폰트를 저장해두고 서버의 폰트를 사용할 수 있도록 하는 기능. CSS3 에서 추가된 기능.
+- 구글 폰트:
+
+- 폰트의 종류 (저작권 문제와 관련하여):
+
+  - 폰트 파일의 포함여부
+
+#### Font size
+
+- font-size
+- 폰트 크기
+- px 단위를 사용
+
+#### Font style
+
+- font-style
+- 기울임꼴 설정
+- italic 값
+
+#### Font-weite
+
+- font-weight
+- normal/bold 중에서 선택 또는 단위없는 100단위 숫자값 사용

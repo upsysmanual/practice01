@@ -12,7 +12,8 @@
     <div class="content">content2</div>
     <div id="content">content3</div>
 
-    <p class="newcontent"></p>
+    <p class="new-content"></p>
+    <img src="/resource/photo.png" class="photo" />
 
     <script>
       // HTML4 방식
@@ -42,8 +43,11 @@
 
       console.log("innerHTML :" + queryClass.innerHTML);
 
-      let newContent = document.querySelector("newcontent");
+      let newContent = document.querySelector("new-content");
       newContent.innerHTML = queryClass.innerHTML;
+
+      let image = document.querySelector(".photo");
+      image.src = "/miniproject/images/bg_about.jpg";
     </script>
   </body>
 </html>
