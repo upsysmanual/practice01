@@ -469,7 +469,7 @@ white-space:nowrap;
 #### Font family
 
 - CSS 파일이 브라우저에서 랜더링되기 때문에 폰트 파일을 클라이언트 PC 에서 찾음.
-  - Web safe: 클라이언트 PC 에서 CSS 를 랜더링할 때에 폰트가 원활하게 표시되도록 하기 위해서 다수의 클라이언트 PC 에 설치되어있을 만한 폰트를 선택해야한다.
+- Web safe: 클라이언트 PC 에서 CSS 를 랜더링할 때에 폰트가 원활하게 표시되도록 하기 위해서 다수의 클라이언트 PC 에 설치되어있을 만한 폰트를 선택해야한다.
 - Fallback: font-family 속성의 값으로 정해준 폰트 종류를 순서대로 찾는다.
 - Web font: 클라이언트마다 폰트를 표시하는 환경이 다르므로 서버에 폰트를 저장해두고 서버의 폰트를 사용할 수 있도록 하는 기능. CSS3 에서 추가된 기능.
 - 구글 폰트:
@@ -494,3 +494,275 @@ white-space:nowrap;
 
 - font-weight
 - normal/bold 중에서 선택 또는 단위없는 100단위 숫자값 사용
+
+#### Link style
+
+- a 태그는 4가지 상태로 구분됨 (link, visited, hover, active)
+  '''
+  <a http://www.naver.com class="link">Naver</a>
+  a: link {}
+  a: visited {}
+  a: hover {}
+  a: active {}
+
+  <!-- a 태그에 class 나 id 가 있다면 이 선택자로 선택할 수도 있다 -->
+
+  .link: link {}
+  .link: visited {}
+  .link: hover {}
+  .link: active {}
+
+  '''
+
+### Media contents styling
+
+- image, video
+- 크기 지정: Box model 의 적용
+- 위치 지정:
+
+### Layout styling
+
+- Element 영역
+  - Block 요소와 Inline 요소의 구분
+- Element 영역의 styling
+  - Box model
+- Element 의 배치
+  - 배치 지정: 인접한 박스들의 관계. (인접한 박스들의 위치에 서로 영향을 미침)
+  - 위치 지정: 박스의 위치를 단독으로 지정. (다른 박스의 위치에 영향을 미치지 않음.)
+
+#### Box model
+
+- Box model 의 구성요소: 안쪽에서부터
+
+  - content (width & Height) > padding > border > margin
+
+- inline 요소에 box model 을 적용할 경우
+  - width, height: 적용되지 않음.
+  - margins: 좌우만 적용되고 상하는 적용되지 않음.
+  - padding, border: 적용됨.
+
+##### width & height
+
+- block 요소
+  - width 는 부모요소에 맞게 채워짐
+  - height 는 contents 또는 자식요소에 맞춰짐
+- px: 지정된 수치로 고정됨. (절대적)
+- %: 부모요소를 기준으로 해당 비율만큼 지정 width 에만 적용되고 height 에는 적용되지 않음. (상대적)
+- auto: width와 height 의 크기를 자동으로 지정함 (width와 height 의 원래 특성으로 적용)
+
+##### padding
+
+- 안쪽여백
+
+'''
+padding-top: 10pt;
+padding-right: 20pt;
+padding-bottom: 30pt;
+padding-left: 40pt;
+
+padding: 10pt 20pt 30pt 40pt;
+(방향은 top (12시 방향) 을 기준으로 시계방향)
+
+padding: 10pt 20pt 30pt 40pt; > 4 방향을 각각 적용.
+
+padding: 10pt 20pt 30pt; > 두번째 값을 좌우 공통 적용. 좌우 20pt
+
+padding: 10pt 20pt; > 서로 마주보는 값을 공통 적용. 상하: 10pt 좌우: 20pt
+
+padding: 10pt; > 4 방향을 모두 공통 적용.
+'''
+\*\* padding 과 margin 은 사용 방법이 동일함.
+
+##### margin
+
+- margin 사용방법은 padding 과 동일함.
+  '''
+  margin-top: 10pt;
+  margin-right: 20pt;
+  margin-bottom: 30pt;
+  margin-left: 40pt;
+
+margin: 10pt 20pt 30pt 40pt;
+(방향은 top (12시 방향) 을 기준으로 시계방향)
+
+margin: 10pt 20pt 30pt 40pt; > 4 방향을 각각 적용.
+
+margin: 10pt 20pt 30pt; > 두번째 값을 좌우 공통 적용. 좌우 20pt
+
+margin: 10pt 20pt; > 서로 마주보는 값을 공통 적용. 상하: 10pt 좌우: 20pt
+
+margin: 10pt; > 4 방향을 모두 공통 적용.
+'''
+
+- margin 겹침과 상쇄 (collapse)
+  - 위,아래로 인접한 박스의 margin 이 상쇄되는 현상
+  - 두 여백 중 큰 쪽의 여백만 적용됨.
+  - 상하의 여백은 상, 하 중 하나만 적용하는 것이 좋다.
+  - 좌우로 인접한 박스에서는 margin 이 상쇄되지 않고 모두 적용되어 함쳐짐.
+
+##### border
+
+'''
+모든 방향에 동일하게 지정할 때
+border: 1px solid red;
+
+각 방향을 다르게 지정할 때
+border-top: 3px solid red;
+border-right: 1px solid red;
+border-bottom: 3px solid red;
+border-left: 1px solid red;
+'''
+
+##### background
+
+- 배경색, 배경이미지 표시
+- 배경은 box model 요소 중 content 와 padding 영역까지 적용된다. (border 안쪽)
+
+'''
+배경색을 적용할 경우 지정할 수 있는 속성
+background-color: red;
+
+배경이미지로 적용할 경우 지정할 수 있는 속성
+background-image: url (이미지파일의 주소);
+background-repeat:no-repeat;
+background-position: 10px 20px;
+background-attachment: fixed;
+'''
+
+- background-repeat
+
+  - repeat < default 가로,세로로 모두 반복
+  - repeat-x: 가로로만 반복
+  - repeat-y: 세로로만 반복
+  - no-repeat: 반복하지 않음
+
+- background-position
+
+  - 배경이미지를 반복하지 않을 때에만 의미가 있음
+  - px
+  - left, top, right (가로)
+  - top, center, bottom (세로)
+
+- background-attachment
+
+  - 배경이미지를 고정함
+  - fixed
+
+- 축약형으로 표시할 때 뒤에 나열하는 값의 위치가 자유로움.
+
+#### display
+
+- box 의 표시 속성을 변경해서 표시함
+- 표시방식만 바뀌고 원래의 속성이 바뀌는 것은 아님.
+
+'''
+display: inline; <- block 요소에 적용하면 inline 요소인 것처럼 표시됨.
+display: block; <- inline 요소에 적용하면 block 요소인 것처럼 표시됨.
+display: inline-block; <- inline 요소처럼 나란히 표시하면서 block 요소처럼 box model 을 적용할 수 있음.
+
+'''
+
+### layout 배치 (box 들의 배치방식)
+
+- float:
+- flex: 현재 실무에서 제일 많이 사용되는 방식
+- grid: 최신 방법. 아직 많이 사용되지는 않지만 점차 flex에서 이 방식으로 바뀌고 있음
+
+#### flexbox
+
+- HTML Element 가 포함 관계 (부모-자식)로 구성되어야 한다.
+- 부모 요소에 Flex 설정, 배치 관련 속성들을 적용
+-
+
+'''
+
+<div class = "flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</div>
+
+.flex-container {
+display:flex;
+flex-direction:column; /_ 박스의 배치 방향을 설정함_/
+flex-wrap:wrap; /_박스의 배치 줄바꿈 설정_/
+justify-content:center; /_박스의 배치 가로정렬, 간격_/
+align-items:center; /_박스의 배치 세로정렬_/
+}
+'''
+
+#### position
+
+- 박스 위치를 단독으로 지정해주는 속성
+- top, right, bottom, left 순으로 위치 지정 속성과 같이 사용
+
+- relative
+
+  - 박스의 원래 위치에서 좌표의 크기만큼 이동한 지점에 위치함
+  - 요소의 일반 흐름에서 제외되지 않음
+
+- absolute
+
+  - position 속성이 지정된 가장 가까운 조상 요소를 기준으로 위치를 지정함
+  - 요소의 일반 흐름에서 제외됨
+  - 문서에서 제외되지는 않는다.
+
+- fixed
+  - 브라우저를 기준으로 위치를 지정
+  - 스크롤해도 지정한 브라우저상 위치에서 움직이지 않음
+  - 요소의 일반 흐름에서 제외됨
+  - 문서 밖에 위치
+
+#### z-index
+
+- 박스가 겹칠 때 앞뒤 순서를 지정해줌
+- 단위없는 정수를 사용해서 지정 가능하다 (음수도 사용 가능)
+- z-index 를 사용할 때에는 position 속성이 적용되어 있어야 한다.
+- 숫자가 크면 앞쪽에 배치되거 작으면 뒤에 배치된다.
+
+## 반응형 웹 RWD (Responsive Web Design)
+
+- 다양한 디바이스의 화면에 컨텐츠, 레이아웃이 잘 보이도록 스타일을 구현
+- OSMU (One Source Multi Use)
+  - 하나의 HTML source 여러 개의 CSS source
+
+### 뷰포트
+
+- 모바일 화면에서 컨텐츠가 잘 보이게 하기 위해서 설정
+- 설정하지 않는 경우 PC 에 최적화된 화면이 작은 모바일 화면으로 축소되어 보이기 때문에 잘 보이지 않음
+
+### 미디어쿼리
+
+- 특정 조건, 상황에 대해 true/false 여부를 확인
+- true 인 경우 포함하고 있는 CSS 코드 블럭을 실행하여 스타일을 적용함
+- cascading 규칙이 적용되기 때문에 특정 조건이 아닐 경우의 스타일을 먼저 지정해주고 미디어쿼리를 적용해야 제대로 최종적용된다.
+
+'''
+@media screen and (max-width:600px;) {
+background-color: gray;
+}
+600px 보다 폭이 작을 때 배경 색상이 회색으로 적용됨
+
+max-width: 600px; -> 600px 보다 작은 범위를 의미
+mix-width: 600px; -> 600px 보다 큰 범위를 의미
+'''
+
+- 화면의 해상도: 가로값을 기준으로 한다. (세로 방향은 스크롤하기 때문에 무한하게 늘어남)
+
+  - PC 모니터
+    - 1024 x 768 px (홈페이지 개발시 작은 화면을 기준으로 개발하면 큰 화면에서도 지원됨)
+    - 1280 x 720 (1024) px
+    - 1920 x 1080 px (full HD, 1K)
+    - 3840 x 2160 px (4K)
+  - 태블릿 (가로모드와 세로모드를 모두 지원함)
+    - 1024 x 768 px
+    - 1280 x 720 px
+    - 1920 x 1080 px
+  - 모바일 (매우 다양함)
+    - 400 x 800
+    - 320 x 640
+
+- breakpoint
+  - 미디어쿼리의 true/false 를 판단하는 기준점
+  - 일반적으로는 디바이스의 화면 해상도가 breakpoint 로 적용됨
+  - 위의 해상도 구분에서는 1024, 720, 320 해상도가 breakpoint 로 설정될 수 있음

@@ -30,7 +30,7 @@ codesandbox 원본 주소: https://codesandbox.io/s/edu-ministori/git06
 - Front end develop: 사용자가 볼 수 있는 화면 개발
 
   - Web front end develop: 브라우저에서 처리되고 렌더링되는 언어를 사용해서 개발
-  - 언어: HTML, CSS, Javacsript
+  - 언어: HTML, CSS, Javascript
 
 - Back end develop: 사용자가 보지 못하는 영역에서 데이터 처리
   - Web back end develop: 서버에서 처리되는 언어를 사용해서 개발
@@ -51,3 +51,7 @@ codesandbox 원본 주소: https://codesandbox.io/s/edu-ministori/git06
   - section-contents: Kebab case - HTML 에서의 id 와 class 만들 때
   - sectionContents: Camel case - Javascript
   - SectionContents: Pascal case - Javascript 의 Class 를 만들 때
+
+## 정적 vs 동적
+- 정적 (static): 개발자가 직접 제어하는 것 (직접 코드를 입력한 부분)
+- 동적 (dynamic): 프로그래밍 언어가 제어하는 것

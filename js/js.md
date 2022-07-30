@@ -365,3 +365,11 @@ dom.addEventListener(function(){
 실행코드블럭
 });
 '''
+
+### CRUD
+
+### 화면효과 (effect)
+- CSS 를 제어해서 화면에 시각적 효과를 줌
+- effect 구현 밸런스
+  - 효과를 표현하는 것은 CSS 가 설정하고 표현된 효과를 동적으로 제어하는 것은 JavaScript 가 한다.
+  - 순서 상 CSS 로 시각 효과의 처음 상태와 마지막 상태를 구현한 뒤 JavaScript 로 동작을 만들어줌.

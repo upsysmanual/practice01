@@ -5,27 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/miniproject/css/style.css" />
+    <script src="/miniproject/js/function.js" defer></script>
   </head>
   <body>
     <!-- 영역을 구분하는 기준: 
-    비슷한 유형의 컨탠츠끼리 묶음
+    비슷한 유형의 컨탠츠끼리 묶음 
     하나의 세로 라인으로 구분되도록 나눔 
     가로로 나뉘는 영역은 우선 세로로 나눈 뒤에 다시 가로로 나눈다.-->
-    <header>
-      <h1><img src="/project/images/logo.png" /></h1>
-      <nav>
-        <ul>
-          <li><a href="#">HOME</a></li>
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">CONTACT</a></li>
+    <header class="header">
+      <h1 class="logo"><img src="/miniproject/images/logo.png" /></h1>
+      <nav class="gnb">
+        <ul class="gnb-list">
+          <li class="gnb-list-item">
+            <a href="#" class="gnb-list-link">HOME</a>
+            <ul class="gnb-depth2">
+              <li class="gnb-depth2-item"><a href="#">Intro</a></li>
+              <li class="gnb-depth2-item"><a href="#">Notice</a></li>
+            </ul>
+          </li>
+          <li class="gnb-list-item">
+            <a href="#" class="gnb-list-link">ABOUT</a>
+            <ul class="gnb-depth2">
+              <li class="gnb-depth2-item"><a href="#">Project</a></li>
+              <li class="gnb-depth2-item"><a href="#">Blog</a></li>
+            </ul>
+          </li>
+          <li class="gnb-list-item">
+            <a href="#" class="gnb-list-link">CONTACT</a>
+            <ul class="gnb-depth2">
+              <li class="gnb-depth2-item"><a href="#">USA</a></li>
+              <li class="gnb-depth2-item"><a href="#">Canada</a></li>
+              <li class="gnb-depth2-item"><a href="#">Mexico</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </header>
-    <section>
+    <section class="main-slogan">
       <h2>UI/UX Graphic Designer</h2>
-      <!-- 높은 레벨의 제목과 낮은 레벨의 제목 사이에 
-        중간 레벨의 제목이 추후 추가되는 경우도 있기 때문에 
-        h1 다음에 h3 을 쓰는 경우도 있다. -->
+      <!-- 높은 레벨의 제목과 낮은 레벨의 제목 사이에 중간 레벨의 제목이 추후 추가되는 경우도 있기 때문에 h1 다음에 h3 을 쓰는 경우도 있다. -->
       <p>
         2016년 11월 1일 HTML5의 마이너 업데이트 버전인 HTML5.1 표준안을 확정,
         2017년 12월 14일 HTML5.2 표준안을 확정했다. HTML5.3 표준안은 현재 작업
@@ -34,20 +59,20 @@
     </section>
     <section>
       <article>
-        <img src="/project/images/image_01.jpg" />
-        <img src="/project/images/image_02.jpg" />
-        <img src="/project/images/image_03.jpg" />
-        <img src="/project/images/image_04.jpg" />
+        <img src="/miniproject/images/image_01.jpg" />
+        <img src="/miniproject/images/image_02.jpg" />
+        <img src="/miniproject/images/image_03.jpg" />
+        <img src="/miniproject/images/image_04.jpg" />
       </article>
       <article>
-        <img src="/project/images/image_05.jpg" />
-        <img src="/project/images/image_06.jpg" />
-        <img src="/project/images/image_07.jpg" />
-        <img src="/project/images/image_08.jpg" />
+        <img src="/miniproject/images/image_05.jpg" />
+        <img src="/miniproject/images/image_06.jpg" />
+        <img src="/miniproject/images/image_07.jpg" />
+        <img src="/miniproject/images/image_08.jpg" />
       </article>
       <article>
-        <img src="/project/images/image_09.jpg" />
-        <img src="/project/images/image_10.jpg" />
+        <img src="/miniproject/images/image_09.jpg" />
+        <img src="/miniproject/images/image_10.jpg" />
         <video controls autoplay muted loop>
           <source src="/resource/mov_bbb.mp4" type="video/mp4" />
         </video>
