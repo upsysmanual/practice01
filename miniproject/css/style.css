@@ -8,14 +8,16 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
+  vertical-align: baseline;
+  box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	/* line-height: 1; */
+  /* line-height: 1; */
+  font-family: Montserrat;
 }
 ol, ul {
 	list-style: none;
@@ -40,12 +42,13 @@ font-family: 'Noto Sans KR', sans-serif; */
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 30px 100px;
+  padding: 30px 100px 0;
 }
 .gnb-list {
   display: flex;
 }
 .gnb-list-item {
+  height: 60px;
   margin-left: 60px;
   position: relative;
 }
@@ -61,7 +64,7 @@ font-family: 'Noto Sans KR', sans-serif; */
   background: #f9f9f9;
   padding: 0 10px;
   border: 1px solid #333;
-  top:45px;
+  top:30px;
   display: none;
 }
 .gnb-depth2.active {
@@ -79,4 +82,46 @@ font-family: 'Noto Sans KR', sans-serif; */
 .main-slogan {
   height: 300px;
   background: #f5f5f5;
+  padding-top: 100px;
+  /* display: flex;
+  justify-content: center; */
+}
+.section-heading {
+  font-size: 38px;
+  color: #171717;
+  font-weight: 600;
+  text-align: center;
+}
+.section-paragraph {
+  width: 500px;
+  text-align: center;
+  margin: auto;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 12pt;
+}
+.mt20 {
+  margin-top: 20pt;
+}
+.image-group {
+  display: flex;
+  justify-content: center;
+}
+.image-item {
+  width: 340px;
+  display: block;
+}
+.image-wrap {
+  width: 340px;
+  height: 256px;
+  overflow: hidden;
+  position: relative;
+}
+.image-item.video {
+  width: 466px; /* width: auto; 로 처리할 수도 있다.*/
+  height: 256px;
+  position: absolute; /* position 을 사용한 가운데 배치 방법*/
+  top: 50%;
+  left: 50%;
+  margin-top: -128px;
+  margin-left: -233px;
 }

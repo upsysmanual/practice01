@@ -7,10 +7,10 @@ for (let i = 0; i < gnbListLink.length; i++) {
     gnbDepth2[i].classList.add("active");
   });
 
-  gnbListLink[i].addEventListener("mouseleave", function () {
-    gnbDepth2[i].classList.remove("active");
-  });
-  // gnb.addEventListener("mouseleave", function () {
+  // gnbListLink[i].addEventListener("mouseleave", function () {
   //   gnbDepth2[i].classList.remove("active");
   // });
+  gnb.addEventListener("mouseleave", function () {
+    gnbDepth2[i].classList.remove("active");
+  });
 }

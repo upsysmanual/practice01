@@ -541,6 +541,35 @@ white-space:nowrap;
   - margins: 좌우만 적용되고 상하는 적용되지 않음.
   - padding, border: 적용됨.
 
+- 박스 크기 계산
+  - 박스 모델 구성요소들의 크기의 합이 박스의 전체 크기가 된다. 
+    (width * height + padding + border)
+    ex) width 300 /padding 4방향 20px /border 4방향 1px /margin 4방향 10px
+        300px + 20px + 20px + 1px + 1px = 342px
+
+- box-sizing 속성
+  - width 계산 기준을 content 또는 전체 크기로 선택함
+
+  '''
+  div {
+    width: 300px;
+    padding: 300px;
+    border: 1px solid black;
+    box-sizing: content-box; /* default*/
+  }
+
+  박스 전체 가로길이: 300+40+2=342px
+
+  div {
+    width: 300px;
+    padding: 300px;
+    border: 1px solid black;
+    box-sizing: border-box;
+  }
+
+  박스 전체 가로길이: content 의 길이+40+2=300px
+  '''
+
 ##### width & height
 
 - block 요소

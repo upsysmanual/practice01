@@ -49,42 +49,45 @@
       </nav>
     </header>
     <section class="main-slogan">
-      <h2>UI/UX Graphic Designer</h2>
+      <h2 class="section-heading">UI/UX Graphic Designer</h2>
       <!-- 높은 레벨의 제목과 낮은 레벨의 제목 사이에 중간 레벨의 제목이 추후 추가되는 경우도 있기 때문에 h1 다음에 h3 을 쓰는 경우도 있다. -->
-      <p>
+      <p class="section-paragraph mt20">
         2016년 11월 1일 HTML5의 마이너 업데이트 버전인 HTML5.1 표준안을 확정,
         2017년 12월 14일 HTML5.2 표준안을 확정했다. HTML5.3 표준안은 현재 작업
         초안 단계로 진행 중이다.
       </p>
     </section>
-    <section>
-      <article>
-        <img src="/miniproject/images/image_01.jpg" />
-        <img src="/miniproject/images/image_02.jpg" />
-        <img src="/miniproject/images/image_03.jpg" />
-        <img src="/miniproject/images/image_04.jpg" />
+    <section class="image-list">
+      <article class="image-group">
+        <img src="/miniproject/images/image_01.jpg" class="image-item"/>
+        <img src="/miniproject/images/image_02.jpg" class="image-item"/>
+        <img src="/miniproject/images/image_03.jpg" class="image-item"/>
+        <img src="/miniproject/images/image_04.jpg" class="image-item"/>
       </article>
-      <article>
-        <img src="/miniproject/images/image_05.jpg" />
-        <img src="/miniproject/images/image_06.jpg" />
-        <img src="/miniproject/images/image_07.jpg" />
-        <img src="/miniproject/images/image_08.jpg" />
+      <article class="image-group">
+        <img src="/miniproject/images/image_05.jpg" class="image-item"/>
+        <img src="/miniproject/images/image_06.jpg" class="image-item"/>
+        <img src="/miniproject/images/image_07.jpg" class="image-item"/>
+        <img src="/miniproject/images/image_08.jpg" class="image-item"/>
       </article>
-      <article>
-        <img src="/miniproject/images/image_09.jpg" />
-        <img src="/miniproject/images/image_10.jpg" />
-        <video controls autoplay muted loop>
-          <source src="/resource/mov_bbb.mp4" type="video/mp4" />
-        </video>
-        <iframe
-          width="560"
-          height="315"
+      <article class="image-group">
+        <img src="/miniproject/images/image_09.jpg"  class="image-item"/>
+        <img src="/miniproject/images/image_10.jpg"  class="image-item"/>
+        <div class="image-wrap">
+          <video controls autoplay muted loop class="image-item video">
+            <source src="/resource/mov_bbb.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="image-wrap">
+          <iframe
           src="https://www.youtube.com/embed/rkrR8km0n50?autoplay=1&mute=1&loop=1&playlist=rkrR8km0n50"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
-        ></iframe>
+          class="image-item video">
+          </iframe>
+        </div>   
       </article>
     </section>
     <footer>
