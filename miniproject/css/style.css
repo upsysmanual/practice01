@@ -43,6 +43,8 @@ font-family: 'Noto Sans KR', sans-serif; */
   display: flex;
   justify-content: space-between;
   padding: 30px 100px 0;
+  position: relative;
+  z-index: 99999;
 }
 .gnb-list {
   display: flex;
@@ -82,9 +84,34 @@ font-family: 'Noto Sans KR', sans-serif; */
 .main-slogan {
   height: 300px;
   background: #f5f5f5;
-  padding-top: 100px;
+  position: relative;
   /* display: flex;
   justify-content: center; */
+}
+.main-slogan-item {
+  position: absolute;
+  top: 0;
+  left: 0; /*dissolve 효과적용시 위치 고정을 위해 적용*/
+  width: 100%; /* position:absolte; 를 적용하면 기본 속성이 제거되므로 100% 를 사용해야함 */
+  height: 100%; /* 원래 height 는 %로 적용되지 않지만 position:absolte; 를 적용하면 %를 사용 가능하다 */
+  padding-top: 70px;
+}
+.main-slogan-item.current {
+  /* left: 0; dissolve 효과적용시 사용 안함 */
+  opacity: 1;
+  transition: opacity 2s; /* js에 의해 class의 이름이 바뀌고 있으므로 모션의 결과화면에 transition 을 적용한다.*/
+}
+.main-slogan-item.next {
+  opacity: 0;
+  /* left: 100%; 화면의 가로길이가 고정되어있지 않으므로 %로 표시  dissolve 효과적용시 사용 안함 */
+}
+.main-slogan-item.prev {
+  /* left: -100%;  dissolve 효과적용시 사용 안함 */
+  opacity: 0;
+  transition: opacity 2s;
+}
+.hamburger {
+  display: none;
 }
 .section-heading {
   font-size: 38px;
@@ -106,6 +133,9 @@ font-family: 'Noto Sans KR', sans-serif; */
   display: flex;
   justify-content: center;
 }
+.image-group:hover {
+  box-shadow: 10px 10px #555;
+}
 .image-item {
   width: 340px;
   display: block;
@@ -124,4 +154,96 @@ font-family: 'Noto Sans KR', sans-serif; */
   left: 50%;
   margin-top: -128px;
   margin-left: -233px;
+}
+.footer {
+  height:280px;
+  background: #141414;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 100px 100px 0;
+}
+.company, 
+.right {
+  display: block;
+}
+.sns-link {
+  color: white;
+  text-decoration: none;
+}
+
+/* 반응형웹 breakpoint 설정 */
+@media screen and (max-width: 1400px) {
+  .image-group {
+    flex-wrap: wrap;
+    width: 680px;
+    margin: auto;
+  }
+@media screen and (max-width: 700px) {
+  .header {
+    padding: 20px;
+  }
+  .gnb {
+    position: fixed;
+    width: 300px;
+    height: 500px;
+    background: white;
+    top: 69px;
+    right: 0;
+    padding: 30px;
+    display: none;
+  }
+  .gnb.active {
+    display: block;
+  }
+  .gnb-list {
+    display: block;
+  }
+  .gnb-list-item {
+    height: auto;
+    margin-bottom: 20px;
+    margin-left: 0;
+  }
+  .gnb-depth2 {
+    position: static;
+    display: block;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+  }
+  .hamburger {
+    display: block;
+    width: 31px;
+    height: 25px;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  /* 아래의 선택자는 hamburger 클래스 내에 있는 img 태그를 선택하기 위한 방법 */
+  .hamburger>img {
+    width: 100%;
+    height: 100%;
+  }
+  .section-heading {
+    font-size: 24px;
+  }
+  .section-paragraph {
+    width: auto;
+  }
+  .image-group {
+    width: 340px;
+  }
+  .footer {
+    height: auto;
+    padding: 20px;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 360px;) {
+  .image-group {
+    width: auto;
+  }
+  .image-item {
+    width: 100%;
+  }
 }
